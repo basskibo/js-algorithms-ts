@@ -1,0 +1,18 @@
+{
+    "files": [
+        "src/main.ts",
+        "src/fibonacci.ts",
+        "src/calculate_century.ts",
+        "src/palindrome.ts",
+        "src/remove_first_duplicate.ts"
+    ],
+    "lib": [
+        "es6",
+    ],
+    "compilerOptions": {
+        "noImplicitAny": true,
+        "target": "es6",
+        "moduleResolution": "node",
+        "esModuleInterop": true
+    }
+}
