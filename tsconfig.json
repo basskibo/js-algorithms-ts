@@ -4,7 +4,8 @@
         "src/fibonacci.ts",
         "src/calculate_century.ts",
         "src/palindrome.ts",
-        "src/remove_first_duplicate.ts"
+        "src/remove_first_duplicate.ts",
+        "src/make_consecutive_array.ts"
     ],
     "lib": [
         "es6",

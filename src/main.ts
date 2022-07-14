@@ -2,12 +2,13 @@ import { century } from "./calculate_century.js"
 import { calculateFibonacci } from "./fibonacci.js"
 import { isPalindrom } from "./palindrome.js"
 import { removeFirstDuplicate } from "./remove_first_duplicate.js"
+import { getNumberOfMissingConsecutive } from "./make_consecutive_array.js"
 import promptly from 'promptly'
 
 (async () => {
 
-    const choice: String = await promptly.choose('Run example: \n 1. get fibonacci number \n 2. calculate century \n 3. check if palindrom \n 4. get first duplicate \n Choice: ',
-        ['1', '2', '3', '4']);
+    const choice: String = await promptly.choose('Run example: \n 1. get fibonacci number \n 2. calculate century \n 3. check if palindrom \n 4. get first duplicate \n 5. find number of missing for consecutive array \n Choice: ',
+        ['1', '2', '3', '4', '5']);
     let example: string;
     switch (choice) {
         case '1':
@@ -38,6 +39,17 @@ import promptly from 'promptly'
             })
             const firstDuplicate = removeFirstDuplicate(numArr)
             console.log(`\nFirst duplicate is  ${firstDuplicate} `)
+            break;
+        case '5':
+            console.log('Starting get number of missing for consecutive example...')
+            const listOfNums: string = await promptly.prompt('Enter numbers seperated by comma: ', { retry: true });
+            const listOfNumsSplitted = listOfNums.split(',')
+            const listOfNumbers: number[] = [];
+            listOfNumsSplitted.forEach(num => {
+                listOfNumbers.push(parseInt(num))
+            })
+            const numOfMissing = getNumberOfMissingConsecutive(listOfNumbers)
+            console.log(`\n ${numOfMissing} numbers missing in order for array to be consecutive `)
             break;
     }
 
